@@ -3,6 +3,7 @@
   "scripts": {
     "postinstall": "npm run build",
     "build": "webpack",
+    "release": "webpack -p",
     "start": "webpack-dev-server"
   },
   "devDependencies": {
