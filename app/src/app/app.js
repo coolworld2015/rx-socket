@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Header from './Header';
+import AppContainer from './appContainer';
 import Login from './Login';
 
 class App extends Component {
@@ -10,20 +10,34 @@ class App extends Component {
             showProgress: false,
             isLoggedIn: false
         }
+		
+		window.appConfig = {
+            access_token: '',
+			url: 'http://jwt-base.herokuapp.com/',
+			users: {
+                refresh: false
+            },
+			phones: {
+                refresh: false
+            }	
+        };
     }
 
     onLogin() {
         console.log('onLogin');
-        this.setState({
-            isLoggedIn: true
-        });
+        this.setState({isLoggedIn: true});
     }
-
+    
+	onLogOut() {
+        console.log('onLogOut');
+        this.setState({isLoggedIn: false});
+    }
+	
     render() {
         if (this.state.isLoggedIn) {
             return (
                 <div>
-                    <Header />
+                    <AppContainer onLogOut={this.onLogOut.bind(this)}/>
                     {this.props.children}
                 </div>
             )
