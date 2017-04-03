@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {Router, hashHistory} from 'react-router';
+import {render} from 'react-dom';
+import routes from './routes';
 
 class AppContainer extends Component {
 	constructor(props) {
@@ -12,7 +15,7 @@ class AppContainer extends Component {
 	onLogOut() {
         this.props.onLogOut();
     }
-
+/*
 	render() {
 		return (
 			<div>
@@ -25,6 +28,13 @@ class AppContainer extends Component {
 				</div>
 			</div>
 		);
+	}
+*/
+
+	render() {
+		return (
+			<Router history={hashHistory} routes={routes}/>
+		);	
 	}
 }
 

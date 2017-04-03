@@ -1,5 +1,3 @@
-'use strict';
-
 import React, {Component} from 'react';
 
 class Login extends Component {
@@ -26,13 +24,9 @@ class Login extends Component {
             showProgress: true
         });
 
-        fetch(window.appConfig.url + 'api/login', {
-            method: 'post',
-			body: JSON.stringify({
-                name: this.state.username,
-                pass: this.state.password,
-				description: 'Android'
-            }),
+        fetch('http://ui-base.herokuapp.com/api/users/findByName/'
+            + this.state.username, {
+            method: 'get',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -40,9 +34,8 @@ class Login extends Component {
         })
             .then((response)=> response.json())
             .then((responseData)=> {
-                if (responseData.token) {
-					window.appConfig.access_token = responseData.token;
-					
+                if (this.state.password == responseData.pass) {
+
                     this.setState({
                         badCredentials: false
                     });
