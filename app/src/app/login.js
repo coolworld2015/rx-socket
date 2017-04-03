@@ -41,7 +41,7 @@ class Login extends Component {
             .then((response)=> response.json())
             .then((responseData)=> {
                 if (responseData.token) {
-					window.appConfig.access_token = responseData.token;
+					appConfig.access_token = responseData.token;
 					
                     this.setState({
                         badCredentials: false
@@ -84,6 +84,7 @@ class Login extends Component {
                 <div onClick={this.getUser.bind(this)}>
                     getUser
                 </div>
+				
                 {errorCtrl}
             </div>
         )

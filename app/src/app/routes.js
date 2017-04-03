@@ -6,6 +6,7 @@ import AboutPage from './components/AboutPage';
 import Clients from './components/Clients';
 import ClientDetails from './components/ClientDetails';
 import Test from './test';
+import Phones from '../phones/phones';
 
 export default (
     <Route path="/" component={App}>
@@ -13,6 +14,7 @@ export default (
         <Route path="about" component={AboutPage}/>
         <Route path="home" component={HomePage}/>
         <Route path="test" component={Test}/>
+        <Route path="phones" component={Phones}/>
         <Route path="clients" component={Clients}/>
         <Route path="client-details">
             <Route path=":id/:name" component={ClientDetails}/>

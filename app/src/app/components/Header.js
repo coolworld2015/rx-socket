@@ -7,7 +7,7 @@ class Header extends Component {
     }
 	
 	onLogOut() {
-        window.appConfig.onLogOut();
+        appConfig.onLogOut();
     }
 	
 	render() {
@@ -20,6 +20,8 @@ class Header extends Component {
 				<Link to="/clients">Clients</Link>
 				{" | "}
 				<Link to="/client-details/1/cool">Client-details</Link>
+				{" | "}
+				<Link to="/phones">Phones</Link>				
 				{" | "}
 				<Link to="/test">Test</Link>
 				{" | "}
