@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import {Router, hashHistory} from 'react-router';
-import {render} from 'react-dom';
-import routes from './routes';
 
-class AppContainer extends Component {
+class Test extends Component {
 	constructor(props) {
 		super(props);
 		
@@ -13,9 +10,9 @@ class AppContainer extends Component {
 	}
 	
 	onLogOut() {
-        this.props.onLogOut();
+        window.appConfig.onLogOut();
     }
-/*
+ 
 	render() {
 		return (
 			<div>
@@ -29,13 +26,6 @@ class AppContainer extends Component {
 			</div>
 		);
 	}
-*/
-
-	render() {
-		return (
-			<Router history={hashHistory} routes={routes}/>
-		);	
-	}
 }
 
-export default AppContainer;
+export default Test;
