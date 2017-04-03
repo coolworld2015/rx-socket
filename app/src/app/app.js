@@ -19,7 +19,8 @@ class App extends Component {
             },
 			phones: {
                 refresh: false
-            }	
+            },
+			onLogOut: this.onLogOut.bind(this)
         };
     }
 

@@ -9,7 +9,7 @@ class AppContainer extends Component {
 		
         this.state = {
             access_token: window.appConfig.access_token
-        }		
+        }
 	}
 	
 	onLogOut() {
@@ -33,7 +33,7 @@ class AppContainer extends Component {
 
 	render() {
 		return (
-			<Router history={hashHistory} routes={routes}/>
+			<Router history={hashHistory} onLogOut={this.onLogOut.bind(this)} routes={routes}/>
 		);	
 	}
 }

@@ -18,12 +18,16 @@ class App extends Component {
             isLoggedIn: true
         });
     }
-
+	
+	onLogOut() {
+        this.props.onLogOut();
+    }
+	
     render() {
         if (this.state.isLoggedIn) {
             return (
                 <div>
-                    <Header />
+                    <Header onLogOut={this.onLogOut.bind(this)}/>
                     {this.props.children}
                 </div>
             )

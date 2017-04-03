@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 
-const Header = () => {
+class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+	
+	onLogOut() {
+        window.appConfig.onLogOut();
+    }
+	
+	    render() {
     return (
         <nav>
             <Link to="/home">Home</Link>
@@ -11,8 +20,11 @@ const Header = () => {
             <Link to="/clients">Clients</Link>
             {" | "}
             <Link to="/client-details/1/cool">Client-details</Link>
+			{" | "}
+            <Link to="/" onClick={this.onLogOut.bind(this)}>Logout</Link>
         </nav>
     );
+		}
 };
 
 export default Header;
