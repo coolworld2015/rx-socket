@@ -20,7 +20,10 @@ class App extends Component {
 			phones: {
                 refresh: false
             },
-			onLogOut: this.onLogOut.bind(this)
+			onLogOut: this.onLogOut.bind(this),
+			socket: {
+                name: ''
+            }	
         };
     }
 

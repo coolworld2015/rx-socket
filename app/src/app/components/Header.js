@@ -25,6 +25,8 @@ class Header extends Component {
 				{" | "}
 				<Link to="/test">Test</Link>
 				{" | "}
+				<Link to="/socket">Socket</Link>
+				{" | "}
 				<Link to="/" onClick={this.onLogOut.bind(this)}>Logout</Link>
 			</nav>
 		);

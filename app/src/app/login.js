@@ -42,6 +42,7 @@ class Login extends Component {
             .then((responseData)=> {
                 if (responseData.token) {
 					appConfig.access_token = responseData.token;
+					appConfig.socket.name = this.state.name; //TODO username
 					
                     this.setState({
                         badCredentials: false
@@ -63,6 +64,15 @@ class Login extends Component {
     }
 
     onLoginPressed() {
+		if (this.state.name == undefined ||
+            this.state.name == '') {
+            this.setState({
+                badCredentials: true
+            });
+            return;
+        }
+		
+		appConfig.socket.name = this.state.name;
         this.props.onLogin();
     }
 
@@ -80,9 +90,20 @@ class Login extends Component {
                 <div onClick={this.onLoginPressed.bind(this)}>
                     LOGIN
                 </div>
-
+				
+				<div>
+					<hr/>
+					<input type="text"
+						onChange={(event) => {
+						this.setState({
+							name: event.target.value,
+						})
+					}}/>
+					<hr/>
+				</div>
+				
                 <div onClick={this.getUser.bind(this)}>
-                    getUser
+                    <button>Login</button>
                 </div>
 				
                 {errorCtrl}

@@ -16,12 +16,20 @@ class Test extends Component {
 	render() {
 		return (
 			<div>
+				<div>
+					<hr/>
+					{appConfig.socket.name}
+				</div>
+								
 				<div onClick={this.onLogOut.bind(this)}>
+					<hr/>
 					Logout
 				</div>
-				<hr/>
+ 
 				<div>
+					<hr/>
 					{this.state.access_token}
+					<hr/>
 				</div>
 			</div>
 		);

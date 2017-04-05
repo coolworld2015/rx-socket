@@ -7,6 +7,7 @@ import Clients from './components/Clients';
 import ClientDetails from './components/ClientDetails';
 import Test from './test';
 import Phones from '../phones/phones';
+import Socket from '../socket/socket';
 
 export default (
     <Route path="/" component={App}>
@@ -14,6 +15,7 @@ export default (
         <Route path="about" component={AboutPage}/>
         <Route path="home" component={HomePage}/>
         <Route path="test" component={Test}/>
+        <Route path="socket" component={Socket}/>
         <Route path="phones" component={Phones}/>
         <Route path="clients" component={Clients}/>
         <Route path="client-details">
