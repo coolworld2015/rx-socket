@@ -7,7 +7,6 @@ class Socket extends Component {
 		super(props);
 		
 		this.state = {
- 
 			messages: [],
 			messageText: '',
 			showProgress: true

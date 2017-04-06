@@ -102,7 +102,7 @@ class Login extends Component {
 					<hr/>
 				</div>
 				
-                <div onClick={this.getUser.bind(this)}>
+                <div onClick={this.onLoginPressed.bind(this)}>
                     <button>Login</button>
                 </div>
 				
