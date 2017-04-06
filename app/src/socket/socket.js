@@ -118,13 +118,10 @@ class Socket extends Component {
 								messageText: event.target.value,
 							})
 						}}/>
-						<br/>
 					</div>	
 	 
 					<div onClick={this.goSend.bind(this)}>
-						<br/>
 						<button className="button">Send</button>
-						<br/>
 						<br/>
 						<hr/>
 					</div>			
@@ -132,9 +129,7 @@ class Socket extends Component {
 				
  				<div className="showMessages">
 					{loader}
-					
 					{errorCtrl}
-					
 					{this.showMessages()}
 				</div>
 				</center>

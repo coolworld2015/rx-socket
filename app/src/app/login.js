@@ -122,6 +122,8 @@ class Login extends Component {
                 <div onClick={this.onLoginPressed.bind(this)}>
 					<br/>
 					<button className="button">Login</button>
+					<br/>
+					<br/>
                 </div>
 				
                 {errorCtrl}
