@@ -81,7 +81,7 @@ class Login extends Component {
 
         if (this.state.badCredentials) {
             errorCtrl = <div className="valid">
-                That username and password combination did not work
+                That username and password combination did not work.
             </div>;
         }
 
