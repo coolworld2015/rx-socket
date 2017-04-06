@@ -110,7 +110,6 @@ class Socket extends Component {
 				<center>
 				<div className="inputarea">
 					<div>
-						 
 						<textarea rows="5" type="text" 
 							className="textarea"
 							ref="textarea"

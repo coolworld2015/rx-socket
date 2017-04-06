@@ -26,7 +26,7 @@ body {
 }
 
 .routeSplitter {
-	margin: 0 100px 0 100px;
+	margin: 0 20px 0 20px;
 }
 
 .inputarea {
@@ -42,7 +42,7 @@ body {
     top: 20px;
     float: left;
 	overflow-y: auto;
-	max-height: 60%;
+	max-height: 50%;
 }
 
 .loading {
@@ -64,7 +64,7 @@ body {
     width: 90%;
     display: inline-block;
     font-size: 20px;
-    background-color: #337ab7;
+	background-color: blue;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: white;
     font-weight: bold;
@@ -78,7 +78,7 @@ body {
     width: 90%;
     display: inline-block;
     font-size: 20px;
-    background-color: cadetblue;
+    background-color: #337ab7;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: white;
     font-weight: bold;
@@ -134,11 +134,13 @@ body {
     font-weight: bold;
     font-size: 22px;
     color: white;
+    color: black;
     background-color: cadetblue;
+    background-color: white;
     border-style: none;
-	width: 98%;
+	width: 96%;
 	height: 35px;
-	margin-top: 10px;
+	margin: 10px 0 0 10px;
 	padding-top: 25px;
 	height: 55px;
 }
