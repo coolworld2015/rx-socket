@@ -86,41 +86,39 @@ class Socket extends Component {
         }
 
         if (this.state.showProgress) {
-            loader = <div style={{
-                justifyContent: 'center',
-                height: 100
-            }}>
-                loader
+            loader = <div className="loading">
+                Loading ...
             </div>;
         }
 		
 		return (
 			<div>
 				<center>
-				<div>
-					<hr/>
-					<textarea rows="5" type="text" className="textarea"
-						onChange={(event) => {
-						this.setState({
-							messageText: event.target.value,
-						})
-					}}/>
-					<br/>
-				</div>	
- 
-                <div onClick={this.goSend.bind(this)}>
-					<br/>
-					<button className="button">Send</button>
-					<br/>
-					<br/>
-					<hr/>
+				<div className="inputarea">
+					<div>
+						<hr/>
+						<textarea rows="5" type="text" className="textarea"
+							onChange={(event) => {
+							this.setState({
+								messageText: event.target.value,
+							})
+						}}/>
+						<br/>
+					</div>	
+	 
+					<div onClick={this.goSend.bind(this)}>
+						<br/>
+						<button className="button">Send</button>
+						<br/>
+						<br/>
+						<hr/>
+					</div>			
                 </div>			
 				
- 				<div>
+ 				<div className="showMessages">
 					{loader}
 					
 					{this.showMessages()}
- 
 				</div>
 				</center>
 			</div>

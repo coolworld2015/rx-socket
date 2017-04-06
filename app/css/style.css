@@ -16,6 +16,38 @@ body {
 	text-shadow: black 0.15em 0.15em 0.15em;
 }
 
+.inputarea {
+	width: 98%;
+	position: fixed;
+    top: 20px;
+    float: left;
+}
+
+.showMessages {
+	margin-top: 220px;
+	width: 98%;
+	position: fixed;
+    top: 20px;
+    float: left;
+	overflow-y: auto;
+	max-height: 60%;
+}
+
+.loading {
+    width: 90%;
+    display: inline-block;
+    font-size: 20px;
+    background-color: #337ab7;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+	text-shadow: black 0.15em 0.15em 0.15em;
+	border-radius: 25px;
+	padding: 10px 0px 10px 0px;
+	margin-top: 30px;
+}
+
 .socket {
     width: 90%;
     display: inline-block;
@@ -29,6 +61,7 @@ body {
 	border-radius: 25px;
 	padding: 10px 0px 10px 0px;
 }
+
 .socket1 {
     width: 90%;
     display: inline-block;
@@ -238,7 +271,7 @@ button:hover {
     background-color: #337ab7;
 }
 
-.loading {
+.loading1 {
     position: fixed;
     top: 20px;
     height: 100%;
