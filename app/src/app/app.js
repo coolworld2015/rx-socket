@@ -22,7 +22,8 @@ class App extends Component {
             },
 			onLogOut: this.onLogOut.bind(this),
 			socket: {
-                name: ''
+                name: '',
+				messages: []
             }	
         };
     }

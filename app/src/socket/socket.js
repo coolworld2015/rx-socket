@@ -8,15 +8,25 @@ class Socket extends Component {
 		super(props);
 		
 		this.state = {
-			messages: [],
 			messageText: '',
-			showProgress: true
+			messages: appConfig.socket.messages
 		}
 		
-		window.ws = new WebSocket('ws://ui-socket.herokuapp.com');
+		if (window.ws == undefined) {
+			window.ws = new WebSocket('ws://ui-socket.herokuapp.com');
+			
+			this.state = {
+				messages: appConfig.socket.messages,
+				messageText: '',
+				showProgress: true
+			}
+		}
 		
 		ws.onerror = (e) => {
-			this.message = 'error'
+			this.setState({
+				serverError: true,
+				showProgress: false
+			});
 		};
 		
 		ws.onopen = () => {
@@ -54,7 +64,9 @@ class Socket extends Component {
 		let messageObject;
 		messageObject = this.state.messageText + '###' + appConfig.socket.name;
 		
-		ws.send(messageObject); //TODO
+		ws.send(messageObject);
+		
+		this.refs.textarea.value = '';
 		this.setState({
 			messageText: '',
 			showProgress: true
@@ -82,7 +94,9 @@ class Socket extends Component {
         var errorCtrl, loader;
 
         if (this.state.serverError) {
-            errorCtrl = 'Something went wrong.'
+            errorCtrl = <div className="loading">
+                Something went wrong.
+            </div>;
         }
 
         if (this.state.showProgress) {
@@ -96,8 +110,10 @@ class Socket extends Component {
 				<center>
 				<div className="inputarea">
 					<div>
-						<hr/>
-						<textarea rows="5" type="text" className="textarea"
+						 
+						<textarea rows="5" type="text" 
+							className="textarea"
+							ref="textarea"
 							onChange={(event) => {
 							this.setState({
 								messageText: event.target.value,
@@ -117,6 +133,8 @@ class Socket extends Component {
 				
  				<div className="showMessages">
 					{loader}
+					
+					{errorCtrl}
 					
 					{this.showMessages()}
 				</div>

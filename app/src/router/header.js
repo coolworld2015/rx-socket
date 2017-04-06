@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import {hashHistory} from 'react-router';
 
 class Header extends Component {
     constructor(props) {
@@ -10,13 +11,25 @@ class Header extends Component {
         appConfig.onLogOut();
     }
 	
+	goToClient() {
+		return;
+		let item = {};
+		item.id = '555';
+		item.name = 'Coolworld';
+		hashHistory.push("/client-details/" + item.id + "/" + item.name);
+	}
+	
 	render() {
 		return (
-			<nav>
-				<Link to="/socket">Socket</Link>
-				{" | "}
-				<Link to="/socket" onClick={this.onLogOut.bind(this)}>Logout</Link>
-			</nav>
+			<div className="brandname">
+				<span className="route" onClick={this.goToClient.bind(this)}>
+					 Socket 
+				</span>
+				<span className="routeSplitter">|</span>
+				<span className="route" onClick={this.onLogOut.bind(this)}>
+					Logout
+				</span>	
+			</div>
 		);
 	}
 };
