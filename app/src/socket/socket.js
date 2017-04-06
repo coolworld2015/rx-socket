@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+'use strict';
 
+import React, { Component } from 'react';
 import ListItem from './listItem';
 
 class Socket extends Component {
@@ -95,28 +96,33 @@ class Socket extends Component {
 		
 		return (
 			<div>
+				<center>
 				<div>
 					<hr/>
-					<input type="text"
+					<textarea rows="5" type="text" className="textarea"
 						onChange={(event) => {
 						this.setState({
 							messageText: event.target.value,
 						})
 					}}/>
 					<br/>
-					<br/>
 				</div>	
-				
-				<div onClick={this.goSend.bind(this)}>
-					<button>Send</button>
+ 
+                <div onClick={this.goSend.bind(this)}>
 					<br/>
-				</div>
+					<button className="button">Send</button>
+					<br/>
+					<br/>
+					<hr/>
+                </div>			
 				
  				<div>
 					{loader}
+					
 					{this.showMessages()}
-					<hr/>
-				</div>	
+ 
+				</div>
+				</center>
 			</div>
 		);
 	}

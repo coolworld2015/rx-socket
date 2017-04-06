@@ -5,7 +5,6 @@ import React, { Component } from 'react';
 class ListItem extends Component {
     constructor(props) {
         super(props);
- 
     }
 
     render() {
@@ -13,19 +12,23 @@ class ListItem extends Component {
 			if (this.props.item.name == appConfig.socket.name) {
 				return (
 					<div>
-						<hr/>
-						{this.props.item.message}
-						{this.props.item.date}
-						{this.props.item.name}
+						<br/>
+						<div className="socket1">
+							{this.props.item.message}<br/>
+							<div className="span">{this.props.item.date}</div>
+							<div className="span1">{this.props.item.name}</div>
+						</div>
 					</div>
 				);
 			} else {
 				return (
 					<div>
-						<hr/>
-						{this.props.item.message}
-						{this.props.item.date}
-						{this.props.item.name}
+						<br/>
+						<div className="socket">
+							{this.props.item.message}<br/>
+							<div className="span">{this.props.item.date}</div>
+							<div className="span1">{this.props.item.name}</div>
+						</div>
 					</div>
 				);				
 			}
