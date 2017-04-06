@@ -80,33 +80,52 @@ class Login extends Component {
         var errorCtrl;
 
         if (this.state.badCredentials) {
-            errorCtrl = <div>
+            errorCtrl = <div className="valid">
                 That username and password combination did not work
             </div>;
         }
 
         return (
             <div>
-                <div onClick={this.onLoginPressed.bind(this)}>
-                    LOGIN
-                </div>
-				
+				<center>
+				<div className="brandname">RX-Socket</div>
 				<div>
+					<br/>
+					<img src="./logo.jpg" className="logo"/>
 					<hr/>
-					<input type="text"
-						onChange={(event) => {
-						this.setState({
-							name: event.target.value,
-						})
-					}}/>
-					<hr/>
+					<div className="header">Login</div>
+					<br/> 
+				</div>
+				
+				<div className="login">
+					<div>
+						<input type="text" className="input"
+							onChange={(event) => {
+								this.setState({
+									name: event.target.value,
+								})
+							}}
+							placeholder="Login"/>
+					</div>
+					<hr className="splitter" />
+					<div>
+						<input type="password" className="input"
+							onChange={(event) => {
+								this.setState({
+									name: event.target.value,
+								})
+							}}
+							placeholder="Password"/>
+					</div>
 				</div>
 				
                 <div onClick={this.onLoginPressed.bind(this)}>
-                    <button>Login</button>
+					<br/>
+					<button className="button">Login</button>
                 </div>
 				
                 {errorCtrl}
+				</center>
             </div>
         )
     }
